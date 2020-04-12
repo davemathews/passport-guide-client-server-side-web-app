@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::get('/login', 'Auth\LoginController@login')->name('login');
+
+Route::get('/login/callback', 'Auth\LoginController@loginCallback')->name('login.callback');
 
 Route::get('/home', 'HomeController@index')->name('home');
